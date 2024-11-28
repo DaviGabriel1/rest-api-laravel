@@ -16,8 +16,17 @@ class ClienteFactory extends Factory
      */
     public function definition(): array
     {
+        $tipo = $this->faker->randomElement(["I","E"]);
+        $nome = $tipo == "I" ? $this->faker->name() : $this->faker->company();
+
         return [
-            //
+            'nome' => $nome,
+            "tipo" => $tipo,
+            "email" => $this->faker->email(),
+            "endereco" => $this->faker->streetAddress(),
+            "cidade" => $this->faker->city(),
+            "estado" => $this->faker->state(),
+            "cep" =>$this->faker->postCode()
         ];
     }
 }

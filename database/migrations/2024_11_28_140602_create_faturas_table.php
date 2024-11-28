@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer("quantidade");
             $table->string("status");
             $table->dateTime("fatura_data");
-            $table->dateTime("pago_data")->nullable();
+            $table->dateTime("pagamento_data")->nullable();
             $table->timestamps();
         });
     }
