@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('faturas', function (Blueprint $table) {
             $table->id();
+            $table->integer("cliente_id");
+            $table->integer("quantidade");
+            $table->string("status");
+            $table->dateTime("fatura_data");
+            $table->dateTime("pago_data")->nullable();
             $table->timestamps();
         });
     }
